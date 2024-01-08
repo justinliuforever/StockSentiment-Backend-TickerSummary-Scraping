@@ -1,10 +1,12 @@
-import { PORT, mongoDBURL } from './config.js';
-
+import { PORT } from './config.js';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import tickerSummaryRoutes from './routes/tickerSummaryRoutes.js'; // Import stockAnalysisRoutes
 
+dotenv.config();
+const mongoDBURL = process.env.MONGO_DBURL
 const app = express();
 
 // Middleware for parsing JSON data

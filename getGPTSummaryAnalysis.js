@@ -1,8 +1,12 @@
-import { CHAT_GPT_API_KEY } from "./config.js";
+//import { CHAT_GPT_API_KEY } from "./config.js";
 import axios from 'axios';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+const apiKey = process.env.CHAT_GPT_API_KEY;
 // Assuming CHAT_GPT_API_KEY is imported from your configuration
-const apiKey = CHAT_GPT_API_KEY;
+//const apiKey = CHAT_GPT_API_KEY;
 
 async function getGPTSummaryAnalysis(articleContent, model = 'gpt-3.5-turbo-1106') {
     // Format the prompt

@@ -4,6 +4,9 @@ import axios from 'axios';
 import getAllStockAnalysis from './getAllStockAnalysis.js';
 import { getGPTSummaryAnalysis } from './getGPTSummaryAnalysis.js';
 
+// Define the base URL from environment variable or default
+const BASE_URL = process.env.STOCK_ANALYSIS_BACKEND_URL || 'http://localhost:5556';
+
 // Function to introduce a delay
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -12,14 +15,12 @@ function delay(ms) {
 // Function to post the generated summary to the database
 async function postTickerSummary(ticker, summary) {
     try {
-        const response = await axios.post('http://localhost:5556/tickerSummary/', {
+        const response = await axios.post(`${BASE_URL}/tickerSummary/`, {
             ticker,
             summary,
             createAt: new Date().toISOString()
         });
         console.log("Summary posted:", response.data);
-        // console.log("Post!!!")
-        // console.log(summary)
     } catch (error) {
         console.error('Error posting summary:', error);
     }
