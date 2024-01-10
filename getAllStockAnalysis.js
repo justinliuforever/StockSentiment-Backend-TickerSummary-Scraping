@@ -12,7 +12,7 @@ async function getAllStockAnalysis(tickerName, startDate, endDate) {
         const analyses = response.data.data;
 
         const formattedData = analyses.map(analysis => {
-            return [analysis.publishedUTC, analysis.chatGPTAnalysis];
+            return [analysis.publishedUTC, analysis.title, analyses.description ,analysis.chatGPTAnalysis];
         });
 
         return formattedData;
