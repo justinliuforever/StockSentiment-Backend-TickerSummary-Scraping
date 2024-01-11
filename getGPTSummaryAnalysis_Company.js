@@ -5,11 +5,12 @@ dotenv.config();
 
 const apiKey = process.env.CHAT_GPT_API_KEY;
 
-async function getGPTSummaryAnalysis_Company(articleContent, model = 'gpt-3.5-turbo-1106') {
+// previous model: gpt-3.5-turbo-1106
+async function getGPTSummaryAnalysis_Company(articleContent, model = 'gpt-4-1106-preview') {
     // Format the prompt to list the major events affecting the company in a concise manner
     const prompt = `
         Provide a summary of the key events or developments influencing the company's performance, as detailed in the provided content. 
-        Present the summary as a list of sentences, each highlighting a significant event or development. Limit the list to a maximum of five items. 
+        Present the summary as a list of sentences, each highlighting a significant event or development. Limit the list to a maximum of five items. One to Three items is ideal. 
         Avoid using terms like 'short term' or 'long term' and focus on delivering clear, impactful information about the company's current status and foreseeable future.
 
         Provided Information: ${articleContent}

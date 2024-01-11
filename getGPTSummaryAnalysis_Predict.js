@@ -5,7 +5,8 @@ dotenv.config();
 
 const apiKey = process.env.CHAT_GPT_API_KEY;
 
-async function getGPTSummaryAnalysis_Predict(articleContent, model = 'gpt-3.5-turbo-1106') {
+// previous model: gpt-3.5-turbo-1106
+async function getGPTSummaryAnalysis_Predict(articleContent, model = 'gpt-4-1106-preview') {
     // Format the prompt to provide a detailed financial analysis in paragraph form
     const prompt = `As a financial analyst, provide a comprehensive analysis of the stock's future direction. Assess the short-term and long-term prospects 
         based on recent events, company performance, and market trends. Include reasoning for each prediction, drawing from the supplied data on company leadership changes, 
