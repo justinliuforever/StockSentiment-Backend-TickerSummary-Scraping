@@ -8,7 +8,7 @@ import { getGPTSummaryAnalysis_Predict } from './getGPTSummaryAnalysis_Predict.j
 
 dotenv.config();
 
-const BASE_URL = process.env.STOCK_ANALYSIS_BACKEND_URL || 'http://localhost:5556';
+const BASE_URL = process.env.STOCK_ANALYSIS_BACKEND_SUMMARY_URL || 'http://localhost:5556';
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
